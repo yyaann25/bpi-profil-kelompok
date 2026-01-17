@@ -1,27 +1,28 @@
-// Fungsi ini dipanggil ketika tombol di bagian <nav> diklik
-function tampilkanPesan(bagian) {
-    // Mendapatkan elemen tempat pesan akan ditampilkan
-    const notifElement = document.getElementById('pesan-notifikasi');
-    let pesan = '';
+const anggota = [
+    { nama: "Ahmad", peran: "Ketua", kataMutiara: "Sabar adalah kunci." },
+    { nama: "Zaid", peran: "Wakil", kataMutiara: "Tetap rendah hati." },
+    { nama: "Fatimah", peran: "Sekretaris", kataMutiara: "Ilmu adalah cahaya." },
+    { nama: "Ali", peran: "Bendahara", kataMutiara: "Kejujuran nomor satu." },
+    { nama: "Hasan", peran: "Anggota", kataMutiara: "Berbuat baik setiap hari." },
+    { nama: "Husain", peran: "Anggota", kataMutiara: "Jaga lisan." },
+    { nama: "Aisyah", peran: "Anggota", kataMutiara: "Tetap semangat belajar." },
+    { nama: "Umar", peran: "Anggota", kataMutiara: "Disiplin adalah kunci sukses." },
+    { nama: "Bilal", peran: "Anggota", kataMutiara: "Suara kebenaran." },
+    { nama: "Hamzah", peran: "Anggota", kataMutiara: "Berani karena benar." }
+];
 
-    // Menentukan pesan berdasarkan tombol yang diklik
-    if (bagian === 'Pengertian') {
-        pesan = 'Anda sedang melihat bagian Pengertian Ekspedisi.';
-    } else if (bagian === 'Dokumentasi') {
-        pesan = 'Geser ke bawah untuk melihat dokumentasi foto kami!';
-        // Contoh scroll ke bagian Dokumentasi
-        document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' });
-    } else if (bagian === 'Anggota') {
-        pesan = 'Maaf, bagian Anggota Kelompok belum tersedia. Segera hadir!';
-    } else {
-        pesan = 'Tombol tidak dikenal.';
-    }
+const container = document.getElementById('container');
 
-    // Menampilkan pesan pada elemen footer
-    notifElement.textContent = pesan;
-
-    // Menghilangkan pesan setelah 5 detik (5000 milidetik)
-    setTimeout(() => {
-        notifElement.textContent = '';
-    }, 5000);
-}
+anggota.forEach(person => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
+    card.innerHTML = `
+        <img src="https://ui-avatars.com/api/?name=${person.nama}&background=random" alt="Foto">
+        <h3>${person.nama}</h3>
+        <p><strong>${person.peran}</strong></p>
+        <p><em>"${person.kataMutiara}"</em></p>
+    `;
+    
+    container.appendChild(card);
+});
