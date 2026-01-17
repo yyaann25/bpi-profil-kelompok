@@ -1,1 +1,0 @@
-# bpi-profil-kelompok
