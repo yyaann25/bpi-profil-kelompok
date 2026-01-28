@@ -189,3 +189,34 @@ footer {
     .filosofi-container { grid-template-columns: 1fr; }
     .nav-links { display: none; }
 }
+
+/* Gaya Kartu Jadwal */
+.card-piket {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border-top: 6px solid var(--accent); /* Warna cokelat kopi */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.card-piket:hover {
+    transform: translateY(-10px);
+}
+
+.label-tugas {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.nama-petugas {
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 600;
+}
