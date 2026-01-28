@@ -1,28 +1,37 @@
-const anggota = [
-    { nama: "Ahmad", peran: "Ketua", kataMutiara: "Sabar adalah kunci." },
-    { nama: "Zaid", peran: "Wakil", kataMutiara: "Tetap rendah hati." },
-    { nama: "Fatimah", peran: "Sekretaris", kataMutiara: "Ilmu adalah cahaya." },
-    { nama: "Ali", peran: "Bendahara", kataMutiara: "Kejujuran nomor satu." },
-    { nama: "Hasan", peran: "Anggota", kataMutiara: "Berbuat baik setiap hari." },
-    { nama: "Husain", peran: "Anggota", kataMutiara: "Jaga lisan." },
-    { nama: "Aisyah", peran: "Anggota", kataMutiara: "Tetap semangat belajar." },
-    { nama: "Umar", peran: "Anggota", kataMutiara: "Disiplin adalah kunci sukses." },
-    { nama: "Bilal", peran: "Anggota", kataMutiara: "Suara kebenaran." },
-    { nama: "Hamzah", peran: "Anggota", kataMutiara: "Berani karena benar." }
-];
+// 1. Navbar Scroll Effect: Mengubah warna nav saat di-scroll
+const handleNavbar = () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+};
 
-const container = document.getElementById('container');
+// 2. Scroll Reveal: Menampilkan konten saat masuk ke layar
+const revealOnScroll = () => {
+    const sections = document.querySelectorAll('section');
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.15
+    };
 
-anggota.forEach(person => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    
-    card.innerHTML = `
-        <img src="https://ui-avatars.com/api/?name=${person.nama}&background=random" alt="Foto">
-        <h3>${person.nama}</h3>
-        <p><strong>${person.peran}</strong></p>
-        <p><em>"${person.kataMutiara}"</em></p>
-    `;
-    
-    container.appendChild(card);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+};
+
+// Jalankan fungsi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', handleNavbar);
+    revealOnScroll();
 });
