@@ -1,222 +1,27 @@
-:root {
-    --primary: #1a1a1a;
-    --accent: #c48d5f;
-    --bg-light: #fdfdfd;
-    --text-dark: #2d3436;
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    overflow-x: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* NAVIGATION */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 25px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition);
-    z-index: 1000;
+#grid-jadwal .bg-white {
+  transition: transform 0.3s ease;
 }
 
-nav.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 10%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    backdrop-filter: blur(10px);
+#grid-jadwal .bg-white:hover {
+  transform: translateY(-10px);
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: white;
-    transition: var(--transition);
+.img-member {
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-nav.scrolled .logo { color: var(--primary); }
-
-.nav-links {
-    display: flex;
-    gap: 30px;
+.member-card:hover .img-member {
+  transform: scale(1.1);
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-nav.scrolled .nav-links a { color: var(--text-dark); }
-.nav-links a:hover { color: var(--accent) !important; }
-
-/* HERO SECTION */
-header {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1447933630911-821f7f950c97?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-header h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    letter-spacing: -2px;
-}
-
-header p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-/* SECTION GENERAL */
-section {
-    padding: 100px 10%;
-    max-width: 1400px;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: var(--transition);
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--accent);
-    margin: 15px auto;
-}
-
-/* FILOSOFI */
-.filosofi-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.filosofi-card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.02);
-    border-left: 5px solid var(--accent);
-}
-
-/* ANGGOTA */
-.member-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.member-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid #f0f0f0;
-}
-
-.member-card:hover {
-    background: var(--accent);
-    color: white;
-    transform: translateY(-5px);
-}
-
-.pembina {
-    grid-column: 1 / -1;
-    background: var(--primary);
-    color: white;
-}
-
-.role-tag {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: var(--primary);
-    color: rgba(255,255,255,0.6);
-    padding: 60px 10% 30px;
-    text-align: center;
-}
-
-.copyright {
-    margin-top: 10px;
-    font-size: 0.7rem;
-}
-
-@media (max-width: 768px) {
-    .filosofi-container { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-}
-
-/* Gaya Kartu Jadwal */
-.card-piket {
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    border-top: 6px solid var(--accent); /* Warna cokelat kopi */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: var(--transition);
-}
-
-.card-piket:hover {
-    transform: translateY(-10px);
-}
-
-.label-tugas {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.nama-petugas {
-    font-size: 1.2rem;
-    color: var(--primary);
-    font-weight: 600;
+/* Responsif untuk HP */
+@media (max-width: 640px) {
+  #grid-jadwal {
+    grid-template-columns: 1fr;
+  }
 }
