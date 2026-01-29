@@ -21,18 +21,18 @@ let aksiTertunda = null;
 // 2. DATA ANGGOTA
 // ==========================================
 const MEMBERS = [
-  { nama: "Gayan Anahata Achmad", foto: "akbar.JPG" },
+  { nama: "Gayan Anahata Achmad", foto: "foto gayan.jpg" },
   { nama: "M. Rayhan Arrasyid Sinardo", foto: "rahman.JPG" },
   { nama: "Ghaisan Aulia Hakim", foto: "azi.JPG" },
   { nama: "Banu Mibras Naufal", foto: "azmi.JPG" },
   { nama: "Muhammad Tsani Akbar", foto: "akbar.JPG" },
-  { nama: "Muhammad Hisyam Annafi", foto: "syamil.png" },
+  { nama: "Muhammad Hisyam Annafi", foto: "gambar hisam.png" },
   { nama: "Muhammad Noval Dwiyanto", foto: "amri.JPG" },
   { nama: "Muhammad Azmi Alqorni", foto: "azmi.JPG" },
   { nama: "Ridza Kholdun", foto: "ali.JPG" },
-  { nama: "Hazel Althaf Ahsari", foto: "eshan.JPG" },
+  { nama: "Hazel Althaf Ahsari", foto: "foto altap.jpg" },
   { nama: "Suheyl Fatkhurrahman", foto: "kenzie.JPG" },
-  { nama: "Rizki Aditya Suganda", foto: "vino.JPG" },
+  { nama: "Rizki Aditya Suganda", foto: "gambar adi.jpg" },
 ];
 
 // ==========================================
@@ -306,3 +306,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ).join("");
   }
 });
+
